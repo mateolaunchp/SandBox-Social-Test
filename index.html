@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sandbox Commerce instantly turns your Shopify, BigCommerce and 3DCart in an iPhone and Android app. Easily design, import your inventory and launch your app.">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Anti-flicker snippet (recommended)  -->
+    <style>.async-hide { opacity: 0 !important} </style>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#493EC9"/>
+    <link rel="apple-touch-icon" href="revampImages/apple-touch-icon.png">
+    <script src="global.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97380656-5"></script>
+
+    <!-- Hotjar Tracking Code for www.sandboxcommerce.com -->
+    <script defer>
+      (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1766922,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <title>Sandbox Social | Shoppable Instagram - UGC Rights & Influencer Tracking</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link href="float-grid-revamp.css" rel="stylesheet" type="text/css" />
+    <link href="revamp.css" rel="stylesheet" type="text/css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="responsive.css">
+    <!-- Start of HubSpot Embed Code -->
+    <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4896323.js"></script> -->
+    <!-- End of HubSpot Embed Code -->
+    <!-- START OF INTERCOM -->
+    <script defer>
+      //Set your APP_ID
+      var APP_ID = 't7yys8wo';
+      window.intercomSettings = {
+        app_id: APP_ID
+      };
+      (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+    </script>
+    <!-- END OF INTERCOM -->
+    <!-- Facebook Pixel Code -->
+    <script defer>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '336869710068546');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img alt="pixel" height="1" width="1"
+             src="https://www.facebook.com/tr?id=336869710068546&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <script>
+      var openIntercom = function() {
+        window.Intercom('show');
+      }
+    </script>
+</head>
+<body>
+<div id="nav-bar" >
+  <a aria-label="Go to Home Page" href="https://www.sandboxsocial.app" onclick="getOutboundLink('https://www.sandboxsocial.app'); return false;">
+    <header class="logo" role="banner">
+      <img alt="Company logo" id="logo-icon" src="revampImages/homepage/cornericon.svg" />
+    </header>
+  </a>
+  <div id="center-nav">
+    <div class="nav-desktop">
+      <div class="nav-ul">
+        <a aria-label="explore" href="explore.html"><li class="nav-li" id="explore"><h2>Explore</h2></li></a>
+        <a aria-label="pricing" href="pricing.html"><li class="nav-li" id="pricing"><h2>Pricing</h2></li></a>
+        <a aria-label="blog" href="blog.html"><li class="nav-li" id="blog"><h2>Blog</h2></li></a>
+        <a aria-label="contact" href="contact.html"><li class="nav-li" id="contact"><h2>Contact</h2></li></a>
+      </div>
+    </div>
+  </div>
+  <div id="right-nav">
+    <div class="nav-moveable" >
+      <a aria-label="log in" href="https://app.sandboxcommerce.com/login?s=true" onclick="getOutboundLink('https://app.sandboxcommerce.com/login?s=true'); return false;">
+        <div class="login">
+          <div class="login-text-container">
+            <h2 id="login">Log in</h2>
+          </div>
+        </div>
+      </a>
+      <a onclick="openIntercom()"><button class="nav-demo-btn" id="cta-homepage-navbar-demo-button">Book a Demo</button></a>
+    </div>
+  </div>
+  <a href="javascript:void(0);" class="hamburger-nav" onclick="myFunction()">
+      <img alt="Hamburger" id="hamburger-contain" class="min-blue" src="revampImages/corner-ham-large.png" />
+      <img alt="Hamburger" id="hamburger" src="revampImages/hamburger.png" />
+      <img alt="Hamburger" id="x-button" src="revampImages/x-button.png" />
+      <div id="myLinks">
+          <picture id="mobile-icon-white">
+              <source srcset="revampImages/icon-mobile-white.webp" type="image/webp">
+              <img alt="mobile-icon-white" id="mobile-icon-white-img" src="revampImages/icon-mobile-white.png" />
+          </picture>
+          <a aria-label="explore" href="explore.html"><h2>Explore</h2></a>
+          <a aria-label="pricing" href="pricing.html"><h2>Pricing</h2></a>
+          <a aria-label="blog" href="blog.html"><h2>Blog</h2></a>
+          <a aria-label="contact" href="contact.html"><h2>Contact</h2></a>
+          <a aria-label="login" href="https://app.sandboxcommerce.com/login?s=true"><h2>Log in</h2></a>
+          <button aria-label="demo" id="cta-homepage-mobile-menu-demo-button" onclick="handleLink('https://app.sandboxcommerce.com/login?s=true&register=true')"><h2>Try a FREE 7 Day Trial</h2></button>
+      </div>
+  </a>
+</div>
+
+<main role="main">
+  <section role="region">
+    <div class="row">
+      <div class="col-12 slide-up-bound" >
+        <h6 class="header-text" id="main-title">
+          Integrate Shoppable</br>Instagram Anywhere<img alt="Anywhere" id="title-underline" src="revampImages/homepage/titleunderline.svg" />
+        </h6>
+        <div class="slide-up hidden-h" id="barrier1"/>
+      </div>
+      <div class="col-12 slide-up-bound">
+        <p class="paragraph-text" id="main-subtitle">
+          Connect your Shopify, BigCommerce and 3D Cart store to</br>your Instagram and bring Shoppable Instagram anywhere.
+        </p>
+        <div class="slide-up hidden-h" id="barrier2"/>
+      </div>
+      <div class="col-12 slide-up-bound demo-button-center" id="demo-button-center-1">
+        <a href="https://app.sandboxcommerce.com/login?s=true&register=true" class="for-real-bound">
+          <button class="body-demo-btn" id="cta-homepage-body-try-free-button-1"><p class="body-demo-btn-text">Try for Free Today</p></button>
+          <img alt="Company logo" class="for-real" src="revampImages/homepage/forreal.svg"/>
+        </a>
+        <div class="slide-up hidden-h-2" id="barrier3"/>
+      </div>
+    </div>
+  </section>
+  <section role="region">
+    <div class="sideways-scroll slide-right-bound">
+      <div class="blank-box">
+        <picture id="scroll-image-1">
+          <source srcset="revampImages/homepage/slide-image-1.webp" type="image/webp">
+          <img alt="image1" id="scroll-image-1-img" src="revampImages/homepage/slide-image-1.png" />
+        </picture>
+      </div>
+      <div class="blank-box">
+        <picture id="scroll-image-2">
+          <source srcset="revampImages/homepage/slide-image-2.webp" type="image/webp">
+          <img alt="image2" id="scroll-image-2-img" src="revampImages/homepage/slide-image-2.png" />
+        </picture>
+      </div>
+      <div class="blank-box">
+        <picture id="scroll-image-3">
+          <source srcset="revampImages/homepage/slide-image-3.webp" type="image/webp">
+          <img alt="image3" id="scroll-image-3-img" src="revampImages/homepage/slide-image-3.png" />
+        </picture>
+      </div>
+      <div class="blank-box">
+        <picture id="scroll-image-4">
+          <source srcset="revampImages/homepage/slide-image-1.webp" type="image/webp">
+          <img alt="image4" id="scroll-image-4-img" src="revampImages/homepage/slide-image-1.png" />
+        </picture>
+      </div>
+      <div class="blank-box">
+        <picture id="scroll-image-5">
+          <source srcset="revampImages/homepage/slide-image-2.webp" type="image/webp">
+          <img alt="image5" id="scroll-image-5-img" src="revampImages/homepage/slide-image-2.png" />
+        </picture>
+      </div>
+      <div class="slide-right hidden-w" id="barrier4"/>
+    </div>
+  </section>
+  <section role="region">
+    <div class="row">
+      <div class="col-12">
+        <h6 class="subheader-text">Easily feature product and collections with</br>your curated Instagram feed.</h6>
+      </div>
+      <div class="col-12">
+        <p class="paragraph-text">
+          Create and customize a window that flaunts your Instagram and</br>can fit on any website, newsletter, or SandBox Powered App
+        </p>
+      </div>
+      <div class="col-12" class="demo-button-center" id="demo-button-center-2">
+        <a href="https://app.sandboxcommerce.com/login?s=true&register=true" class="for-real-bound">
+          <button class="body-demo-btn" id="cta-homepage-body-try-free-button-2"><p class="body-demo-btn-text">Try for Free Today</p></button>
+          <img alt="Company logo" class="for-real" src="revampImages/homepage/forreal.svg"/>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section role="region">
+    <div class="example-row-1">
+      <div class="blank-box-2">
+        <picture id="content-image-1">
+          <source srcset="revampImages/homepage/content-image-1.webp" type="image/webp">
+          <img alt="image5" id="content-image-1-img" src="revampImages/homepage/content-image-1.png" class="scalable-img"/>
+        </picture>
+      </div>
+      <div class="cta-half">
+        <div>
+          <h6 class="title-text">Tag multiple products</br>with Ease</h6>
+        </div>
+        <div>
+          <p class="paragraph-text-left">
+            Feature and flaunt as many products as you want</br>in an image. Easily send users to an
+            individual</br>product or a collection for them to view.
+          </p>
+        </div>
+        <div class="demo-button">
+          <a href="https://app.sandboxcommerce.com/login?s=true&register=true">
+            <button class="body-demo-btn"><p class="body-demo-btn-text" id="cta-homepage-body-try-free-button-3">Try for Free Today</p></button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section role="region">
+        <div class="example-row-blue">
+            <div class="cta-half">
+                <div>
+                    <h6 class="title-text">Insightful Analytics</h6>
+                </div>
+                <div>
+                    <p class="paragraph-text-left">Easily integrate with your Shopify, BigCommerce</br>or 3D Cart store, quickly know which purchases</br>come from Sandbox Commerce and track clicks</br>and conversions from your Windows.</p>
+                </div>
+                <div class="demo-button">
+                    <a href="https://app.sandboxcommerce.com/login?s=true&register=true"><button class="body-demo-btn"><p class="body-demo-btn-text" id="cta-homepage-body-try-free-button-4">Try for Free Today</p></button></a>
+                </div>
+            </div>
+            <div class="blank-box-2">
+                <picture id="content-image-2">
+                    <source srcset="revampImages/homepage/content-image-2.webp" type="image/webp">
+                    <img alt="image5" id="content-image-2-img" src="revampImages/homepage/content-image-2.png" class="scalable-img"/>
+                </picture>
+            </div>
+        </div>
+    </section>
+    <section role="region">
+        <div class="example-row-1">
+            <div class="blank-box-2">
+                <picture id="content-image-3">
+                    <source srcset="revampImages/homepage/content-image-3.webp" type="image/webp">
+                    <img alt="image5" id="content-image-3-img" src="revampImages/homepage/content-image-3.png" class="scalable-img"/>
+                </picture>
+            </div>
+            <div class="cta-half">
+                <div>
+                    <h6 class="title-text">Feature products</br>in Windows</h6>
+                </div>
+                <div>
+                    <p class="paragraph-text-left">Maximize influencer campaigns and leverage how</br>great they make your products look. Easily tag</br>products from Instagram and allow your customers to</br>purchase on any website, newsletter or mobile app.</p>
+                </div>
+                <div class="demo-button">
+                    <a href="https://app.sandboxcommerce.com/login?s=true&register=true"><button class="body-demo-btn"><p class="body-demo-btn-text" id="cta-homepage-body-try-free-button-5">Try for Free Today</p></button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section role="region" class="grey-bg">
+        <h6 class="subheader-text">Trusted by hundreds of brands and retailers</h6>
+        <p class="paragraph-text">Don't take our word for it. Here's the reason why we're pushing it</p>
+        <div class="sideways-scroll-snap">
+            <div class="quote-box-empty">
+            </div>
+            <div class="quote-box-large" id="quote1">
+                <p class="quote-text">Shoppable Instagram made it effortless to keep the content on my website up to date. We’ve seen a jump in conversion from our home page as well!</p>
+                <div class="quote-footer">
+                    <div class="quote-footer-block">
+                        <picture class="quote-image footer-icon-2">
+                            <source srcset="revampImages/headshot_3.webp" type="image/webp">
+                            <img alt="image5" class="quote-image footer-icon-2" src="revampImages/headshot_3.png" />
+                        </picture>
+                    </div>
+                    <div class="quote-footer-block">
+                        <p class="quote-name">Jason</p>
+                        <p class="quote-company">Marketing Manager at Vintage Founder</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="quote-box-large" id="quote2">
+                <p class="quote-text">Sandbox Social made managing User Generated Content from our influencer campaigns a breeze. Keep your products looking fresh with your Instagram feed!</p>
+                <div class="quote-footer">
+                    <div class="quote-footer-block">
+                        <img alt="image1" id="footer-icon-2" class="quote-image" src="revampImages/homepage/footer-icon-2.png" />
+                    </div>
+                    <div class="quote-footer-block">
+                        <p class="quote-name">Kevin Ventura</p>
+                        <p class="quote-company">Company Name</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="quote-box-large" id="quote3">
+                <p class="quote-text">It’s never been easier to show off our Instagram feed. Our marketing team puts Shoppable Instagram grids in newsletters, checkout and just about everywhere we can!</p>
+                <div class="quote-footer">
+                    <div class="quote-footer-block">
+                        <picture class="quote-image footer-icon-2">
+                            <source srcset="revampImages/headshot_1.webp" type="image/webp">
+                            <img alt="image5" class="quote-image footer-icon-2" src="revampImages/headshot_1.png" />
+                        </picture>
+                    </div>
+                    <div class="quote-footer-block">
+                        <p class="quote-name">Ashley</p>
+                        <p class="quote-company">Head of E-Commerce at MembersOnly</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-box-large" id="quote4">
+                <p class="quote-text">Our brands spends a lot of resources making our instagram feed look great. It was a no brainer to bring this over to our website. It looks great and helps sell more of our products!</p>
+                <div class="quote-footer">
+                    <div class="quote-footer-block">
+                        <picture class="quote-image footer-icon-2">
+                            <source srcset="revampImages/headshot_2.webp" type="image/webp">
+                            <img alt="image5" class="quote-image footer-icon-2" src="revampImages/headshot_2.png" />
+                        </picture>
+                    </div>
+                    <div class="quote-footer-block">
+                        <p class="quote-name">Sarah</p>
+                        <p class="quote-company">Co-Founder at Being There Clothing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-box-empty">
+            </div>
+        </div>
+    </section>
+
+    <section role="region">
+        <div class="col-12-b">
+            <div class="black-bottom">
+                <div class="bottom-cta">
+                    <div>
+                        <h6 class="title-text-white">Bring Shoppable</br>Instagram Everywhere</h6>
+                    </div>
+                    <div>
+                        <p class="paragraph-text-left-white">Brands spend so much time curating and refining their Instagram, why not</br>bring it everywhere? Easily implement Sandbox Windows into your website,</br>mobile website, newsletter and Sandbox Powered Apps.</p>
+                    </div>
+                    <div id="form1">
+                        <div class="cta-surround">
+                            <input type="text" id="email4" name="email" class="email-input-white" placeholder="Enter your email address"
+                              aria-label="Enter your email address">
+                            <button class="email-submit-white" id="cta-explorepage-footer-sign-up-button" value="Sign up today" onClick="mailchimp()">Sign up today</button>
+                        </div>
+                    </div>
+                </div>
+                <img alt="image1" id="footer-image-2" src="revampImages/homepage/footer-image-2.png" />
+                <img alt="image1" id="footer-image-1" src="revampImages/homepage/footer-image-1.png" />
+            </div>
+        </div>
+    </section>
+
+    <section role="region">
+      <div class="footer-grid-container">
+        <div class="footer-grid service-list">
+          <div>
+            <img alt="icon-mobile" class="footer-service-img icon-mobile" src="revampImages/icon-mobile.png" />
+            <img alt="experts" class="footer-service-img experts" src="revampImages/footer-service/expertsplatforms.png"/>
+          </div>
+          <div class="services">
+            <img alt="shopify" class="footer-service-img shopify" onclick="handleLink('https://apps.shopify.com/sandbox')" src="revampImages/footer-service/image_1.png"/>
+            <img alt="3dcart" class="footer-service-img 3dcart" onclick="handleLink('https://apps.3dcart.com/sandbox-commerce-mobile-apps.html')" src="revampImages/footer-service/image_3.png"/>
+            <img alt="bigcommerce" class="footer-service-img bigcommerce" onclick="handleLink('https://www.bigcommerce.com/apps/sandbox-commerce')" src="revampImages/footer-service/image_4.png"/>
+          </div>
+        </div>
+
+        <div class="footer-grid social-media">
+          <img class="footer-social-icon" alt="facebook" onclick="handleLink('https://www.facebook.com/sandboxcommerce')" src="revampImages/linkedin.svg">
+          <img class="footer-social-icon" alt="twitter" onclick="handleLink('https://twitter.com/sandboxcommerce')" src="revampImages/twitter.svg">
+          <img class="footer-social-icon" alt="instagram" onclick="handleLink('https://www.facebook.com/sandboxcommerce')" src="revampImages/instagram.svg">
+          <img class="footer-social-icon" alt="linkedin" onclick="handleLink('https://www.linkedin.com/organization-guest/company/sandboxcommerce')" src="revampImages/facebook.svg">
+          <img class="footer-social-icon" alt="email" onclick="handleLink('mailto:sales@sandboxcommerce.com')" src="revampImages/mail.svg">
+        </div>
+
+        <ul class="footer-grid service-policy">
+          <li><a href="https://www.sandboxcommerce.com/extension/terms.html">Terms of Service</a></li>
+          <li><a href="https://www.sandboxcommerce.com/extension/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </section>
+
+</main>
+
+<script src="index.js"></script>
+<script src="social.js"></script>
+<script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRGNC76"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

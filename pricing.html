@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Sandbox Commerce instantly turns your Shopify, BigCommerce and 3DCart in an iPhone and Android app. Easily design, import your inventory and launch your app.">
+    <!-- Anti-flicker snippet (recommended)  -->
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+    })(window,document.documentElement,'async-hide','dataLayer',4000,
+      {'GTM-K3F7JLQ':true});
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MRGNC76');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97380656-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-97380656-5');
+    </script>
+    <script>
+      /**
+       * Function that registers a click on an outbound link in Analytics.
+       * This function takes a valid URL string as an argument, and uses that URL string
+       * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+       * using 'navigator.sendBeacon' in browser that support it.
+       */
+      var getOutboundLink = function(url) {
+        gtag('event', 'click', {
+          'event_category': 'outbound',
+          'event_label': url,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = url;}
+        });
+      }
+
+      var userClickedCTA = function(which) {
+        gtag('event', 'ctaClick', {
+          'event_category': 'Homepage CTA Click',
+          'event_label': which
+          // 'transport_type': 'beacon',
+          // 'event_callback': function(){document.location = url;}
+        });
+      }
+    </script>
+
+    <script>
+      var revealAnswer = function(which) {
+        var plus1 = document.getElementById("plus-1");
+        var minus1 = document.getElementById("minus-1");
+        var answer1 = document.getElementById("answer-1");
+
+        var plus2 = document.getElementById("plus-2");
+        var minus2 = document.getElementById("minus-2");
+        var answer2 = document.getElementById("answer-2");
+
+        var plus3 = document.getElementById("plus-3");
+        var minus3 = document.getElementById("minus-3");
+        var answer3 = document.getElementById("answer-3");
+
+        var plus4 = document.getElementById("plus-4");
+        var minus4 = document.getElementById("minus-4");
+        var answer4 = document.getElementById("answer-4");
+
+        plus1.innerHTML = '+';
+        answer1.className = 'question-answer-text hidden-text';
+
+//          plus2.className = 'question-indicator';
+//          minus2.className = 'question-indicator hidden-text';
+        plus2.innerHTML = '+';
+        answer2.className = 'question-answer-text hidden-text';
+
+//          plus3.className = 'question-indicator';
+//          minus3.className = 'question-indicator hidden-text';
+        plus3.innerHTML = '+';
+        answer3.className = 'question-answer-text hidden-text';
+
+//          plus4.className = 'question-indicator';
+//          minus4.className = 'question-indicator hidden-text';
+        plus4.innerHTML = '+';
+        answer4.className = 'question-answer-text hidden-text';
+
+        if (which === 1) {
+//            plus1.className = 'question-indicator hidden-text';
+//            minus1.className = 'question-indicator';
+          plus1.innerHTML = '-';
+          answer1.className = 'question-answer-text';
+        } else if (which === 2) {
+//            plus2.className = 'question-indicator hidden-text';
+//            minus2.className = 'question-indicator';
+          plus2.innerHTML = '-';
+          answer2.className = 'question-answer-text';
+        } else if (which === 3) {
+//            plus3.className = 'question-indicator hidden-text';
+//            minus3.className = 'question-indicator';
+          plus3.innerHTML = '-';
+          answer3.className = 'question-answer-text';
+        } else if (which === 4) {
+//            plus4.className = 'question-indicator hidden-text';
+//            minus4.className = 'question-indicator';
+          plus4.innerHTML = '-';
+          answer4.className = 'question-answer-text';
+        }
+      }
+
+      var hamburgerOpen = false;
+      var myFunction = function() {
+        var links = document.getElementById("myLinks");
+        var hamburgerBlue = document.getElementById("hamburger-contain");
+        var hamburgerIcon = document.getElementById("hamburger");
+        var xButton = document.getElementById("x-button");
+        if (hamburgerOpen) {
+          hamburgerOpen = false;
+          links.style.display = "none";
+          hamburgerIcon.style.display = "block";
+          xButton.style.display = "none";
+          hamburgerBlue.className = 'min-blue';
+        } else {
+          hamburgerOpen = true;
+          links.style.display = "block";
+          hamburgerIcon.style.display = "none";
+          xButton.style.display = "block";
+          hamburgerBlue.className = 'max-blue';
+        }
+
+      }
+
+      var canCheck = true;
+      var handleScroll = function() {
+        if (canCheck) {
+          console.log('scrolling!');
+          var windowCenter = $(window).width() / 2;
+          var errorRange = $(window).width() / 6;
+          var quote1 = document.getElementById("quote1");
+          var quote2 = document.getElementById("quote2");
+          var quote3 = document.getElementById("quote3");
+          var quote4 = document.getElementById("quote4");
+          if (Number($('#quote1').offset().left - errorRange) <= windowCenter && Number($('#quote1').offset().left + errorRange) >= windowCenter) {
+            console.log('quote 1 is in center');
+            quote1.className = 'quote-box-large';
+            quote2.className = 'quote-box';
+            quote3.className = 'quote-box';
+            quote4.className = 'quote-box';
+          } else if (Number($('#quote2').offset().left - errorRange) <= windowCenter && Number($('#quote2').offset().left + errorRange) >= windowCenter) {
+            console.log('quote 2 is in center');
+            quote1.className = 'quote-box';
+            quote2.className = 'quote-box-large';
+            quote3.className = 'quote-box';
+            quote4.className = 'quote-box';
+          } else if (Number($('#quote3').offset().left - errorRange) <= windowCenter && Number($('#quote3').offset().left + errorRange) >= windowCenter) {
+            console.log('quote 3 is in center');
+            quote1.className = 'quote-box';
+            quote2.className = 'quote-box';
+            quote3.className = 'quote-box-large';
+            quote4.className = 'quote-box';
+          } else if (Number($('#quote4').offset().left - errorRange) <= windowCenter && Number($('#quote4').offset().left + errorRange) >= windowCenter) {
+            console.log('quote 4 is in center');
+            quote1.className = 'quote-box';
+            quote2.className = 'quote-box';
+            quote3.className = 'quote-box';
+            quote4.className = 'quote-box-large';
+          }
+        }
+      }
+      var handleLink = function(link) {
+        window.open(link);
+      }
+
+
+      var mailchimp = function() {
+        var email = $("#email4").val();
+        if (email && email.indexOf('@') > -1) {
+          var data = {
+            data: {
+              "email_address": email,
+              "status": "subscribed"
+            }
+          };
+          var url = 'https://webbackend.sandboxcommerce.com/api/mailchimp/sandboxHomepage';
+          fetch(url, {
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
+            method: 'post',
+            body: JSON.stringify(data)
+          })
+          .then(response => response.json())
+        .then(response => {
+            // alert(JSON.stringify(response));
+            if (response) {
+              swal("Thank you! You will now remain up to date with SandBox Social.");
+            }
+          })
+        .catch((err) => {
+            throw (err);
+        });
+        } else {
+          swal("Please enter a valid email address.");
+        }
+      };
+    </script>
+    <!-- Hotjar Tracking Code for www.sandboxcommerce.com -->
+    <script>
+      (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1766922,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <title>Sandbox Commerce | Social</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link href="float-grid-revamp.css" rel="stylesheet" type="text/css" />
+    <link href="revamp.css" rel="stylesheet" type="text/css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="responsive.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Start of HubSpot Embed Code -->
+    <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4896323.js"></script> -->
+    <!-- End of HubSpot Embed Code -->
+    <!-- START OF INTERCOM -->
+    <script>
+      //Set your APP_ID
+      var APP_ID = 't7yys8wo';
+
+      window.intercomSettings = {
+        app_id: APP_ID
+      };
+      (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+    </script>
+    <!-- END OF INTERCOM -->
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '336869710068546');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=336869710068546&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <script>
+      var openIntercom = function() {
+        window.Intercom('show');
+      }
+    </script>
+</head>
+
+<body>
+
+
+<div id="nav-bar" >
+    <a aria-label="Go to Home Page" href="https://www.sandboxsocial.app" onclick="getOutboundLink('https://www.sandboxsocial.app'); return false;">
+        <header class="logo" role="banner">
+            <img alt="Company logo" id="logo-icon" src="revampImages/homepage/cornericon.svg" />
+        </header>
+    </a>
+    <div id="center-nav">
+        <div class="nav-desktop">
+            <div class="nav-ul">
+                <a aria-label="explore" href="explore.html"><li class="nav-li" id="explore"><h2>Explore</h2></li></a>
+                <a aria-label="pricing" href="pricing.html"><li class="nav-li" id="pricing"><h2 class="active-nav">Pricing</h2></li></a>
+                <a aria-label="blog" href="blog.html"><li class="nav-li" id="blog"><h2>Blog</h2></li></a>
+                <a aria-label="contact" href="contact.html"><li class="nav-li" id="contact"><h2>Contact</h2></li></a>
+            </div>
+        </div>
+    </div>
+    <div id="right-nav">
+        <div class="nav-moveable" >
+            <a aria-label="log in" href="https://app.sandboxcommerce.com/login?s=true" onclick="getOutboundLink('https://app.sandboxcommerce.com/login?s=true'); return false;">
+                <div class="login">
+                    <div class="login-text-container">
+                        <h2 id="login">Log in</h2>
+                    </div>
+                </div>
+            </a>
+            <a onclick="openIntercom()"><button class="nav-demo-btn" id="cta-pricingpage-navbar-demo-button">Book a Demo</button></a>
+        </div>
+    </div>
+    <a href="javascript:void(0);" class="hamburger-nav" id="hidden-nav" onclick="myFunction()">
+        <img alt="Hamburger" id="hamburger-contain" class="min-blue" src="revampImages/corner-ham-large.png" />
+        <img alt="Hamburger" id="hamburger" src="revampImages/hamburger.png" />
+        <img alt="Hamburger" id="x-button" src="revampImages/x-button.png" />
+        <div id="myLinks">
+            <img alt="mobile-icon-white" id="mobile-icon-white" src="revampImages/icon-mobile-white.png" />
+            <a aria-label="explore" href="explore.html"><h2>Explore</h2></a>
+            <a aria-label="pricing" href="pricing.html"><h2>Pricing</h2></a>
+            <a aria-label="blog" href="blog.html"><h2>Blog</h2></a>
+            <a aria-label="contact" href="contact.html"><h2>Contact</h2></a>
+            <a aria-label="login" href="https://app.sandboxcommerce.com/login?s=true"><h2>Log in</h2></a>
+            <button aria-label="demo" id="cta-pricingpage-mobile-menu-demo-button" onclick="handleLink('https://app.sandboxcommerce.com/login?s=true&register=true')"><h2>Try a FREE 7 Day Trial</h2></button>
+        </div>
+    </a>
+</div>
+
+<main role="main">
+    <section role="region">
+        <div class="row">
+            <div class="col-12" >
+                <h6 class="header-text" id="main-title">Try Shoppable Instagram,<br/><span id="underlined-text-span">FREE<img alt="Anywhere" id="free-underline" src="revampImages/pricing/free-underline.png" /></span> for 7 Days</h6>
+            </div>
+            <div class="col-12">
+                <p class="paragraph-text">No credit card required, no commitments, no additional fees,<br/>you can cancel at any time.</p>
+            </div>
+        </div>
+    </section>
+    <div role="region">
+        <div class="example-row-1">
+            <div class="blank-box-2">
+                <img alt="image1" id="content-image-1" src="revampImages/pricing/body-content-1.png" onclick="handleLink('https://app.sandboxcommerce.com/login?s=true&register=true')"/>
+                <img alt="whisker1" id="whisker-left" src="revampImages/pricing/whiskers-left.png" />
+                <img alt="whisker2" id="whisker-right" src="revampImages/pricing/whiskers-right.png" />
+                <img alt="arrow1" id="arrow0" src="revampImages/pricing/arrow0.png" />
+            </div>
+            <div class="blank-box-2">
+                <div>
+                    <h6 class="title-text">Frequently asked questions</h6>
+                </div>
+                <div>
+                    <p class="paragraph-text">If you can’t find the question you’re looking for,<br/>email us at <a href="mailto:info@sandboxcommerce.com" class="email-link">info@sandboxcommerce.com</a></p>
+                </div>
+                <div class="question-div">
+                    <h6 class="question-text" id="question-1" onClick="revealAnswer(1)"><span id="plus-1" class="question-indicator">+</span> How is Social SandBox different?</h6>
+                    <p class="question-answer-text hidden-text" id="answer-1">Sandbox Social is built on the most secure and reliable integrations to Shopify, Big Commerce and 3dCart.</p>
+                </div>
+                <div class="question-div">
+                    <h6 class="question-text" id="question-2" onClick="revealAnswer(2)"><span id="plus-2" class="question-indicator">+</span> Can I try SandBox Social for Free?</h6>
+                    <p class="question-answer-text hidden-text" id="answer-2">Sandbox Social is built on the most secure and reliable integrations to Shopify, Big Commerce and 3dCart.</p>
+                </div>
+                <div class="question-div">
+                    <h6 class="question-text" id="question-3" onClick="revealAnswer(3)"><span id="plus-3" class="question-indicator">+</span> What is Engage?</h6>
+                    <p class="question-answer-text hidden-text" id="answer-3">Sandbox Social is built on the most secure and reliable integrations to Shopify, Big Commerce and 3dCart.</p>
+                </div>
+                <div class="question-div">
+                    <h6 class="question-text" id="question-4" onClick="revealAnswer(4)"><span id="plus-4" class="question-indicator">+</span> Is There a Limit to How Many Team Members I Can Add?</h6>
+                    <p class="question-answer-text hidden-text" id="answer-4">Sandbox Social is built on the most secure and reliable integrations to Shopify, Big Commerce and 3dCart.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div role="region">
+        <div class="example-row-2">
+            <h6 class="subheader-text-padded">See why Sandbox Social is perfect for you.</h6>
+            <div class="sideways-scroll">
+                <div class="table-div">
+                    <table style="width:200px">
+                        <tr>
+                            <td class="table-data-big">Default</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data"># of Blocks</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Integrations</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">iOS and Android Apps</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Scheduled Push Notifications</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Animated Push Notifications</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Wishlist</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Shoppable Instagram</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Product Reviews</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Analytics</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Segmented Push Notifications</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Abandoned Cart Push Notifications</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Product SKU Limit</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Search</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">In-App Messaging</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Theme Customization</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data">Customized Features and UX</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-div-blue">
+                    <p class="table-company">Tapcart</p>
+                    <table style="width:400px">
+                        <tr>
+                            <td class="table-data-third-big">$99</td>
+                            <td class="table-data-third-big">$199</td>
+                            <td class="table-data-third-big">$999</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">6</td>
+                            <td class="table-data-third">15</td>
+                            <td class="table-data-third">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">0</td>
+                            <td class="table-data-third">3</td>
+                            <td class="table-data-third">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">Yes</td>
+                            <td class="table-data-third">Yes</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">Yes</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">Yes</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">Yes</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">Yes</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">Yes</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">No</td>
+                            <td class="table-data-third">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                            <td class="table-data-third">---</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-div-green">
+                    <p class="table-company">Plobal</p>
+                    <table style="width:700px">
+                        <tr>
+                            <td class="table-data-fifth-big">$99</td>
+                            <td class="table-data-fifth-big">$199</td>
+                            <td class="table-data-fifth-big">$299</td>
+                            <td class="table-data-fifth-big">$599</td>
+                            <td class="table-data-fifth-big">$1299</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">NA</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">NA</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">No</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">Yes</td>
+                            <td class="table-data-fifth">Yes</td>
+                            <td class="table-data-fifth">Yes</td>
+                            <td class="table-data-fifth">Yes</td>
+                            <td class="table-data-fifth">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">50</td>
+                            <td class="table-data-fifth">250</td>
+                            <td class="table-data-fifth">500</td>
+                            <td class="table-data-fifth">1000</td>
+                            <td class="table-data-fifth">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">No</td>
+                            <td class="table-data-fifth">No</td>
+                            <td class="table-data-fifth">Yes</td>
+                            <td class="table-data-fifth">Yes</td>
+                            <td class="table-data-fifth">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                            <td class="table-data-fifth">---</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <img alt="arrow1" id="arrow1" src="revampImages/pricing/arrow1.png" />
+        </div>
+    </div> -->
+    <section role="region" class="grey-bg">
+        <h6 class="subheader-text">Trusted by hundreds of brands and retailers</h6>
+        <p class="paragraph-text">Don't take our word for it. Here's the reason why we're pushing it</p>
+        <div class="sideways-scroll-snap">
+            <div class="quote-box-empty">
+            </div>
+            <div class="quote-box-large" id="quote1">
+                <p class="quote-text">Shoppable Instagram made it effortless to keep the content on my website up to date. We’ve seen a jump in conversion from our home page as well!</p>
+                <div class="quote-footer">
+                    <div class="quote-footer-block">
+                        <img alt="image1" class="quote-image footer-icon-2" src="revampImages/headshot_3.png" />
+                    </div>
+                    <div class="quote-footer-block">
+                        <p class="quote-name">Jason</p>
+                        <p class="quote-company">Marketing Manager at Vintage Founder</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="quote-box-large" id="quote2">
+                <p class="quote-text">Sandbox Social made managing User Generated Content from our influencer campaigns a breeze. Keep your products looking fresh with your Instagram feed!</p>
+                <div class="quote-footer">
+                    <div class="quote-footer-block">
+                        <img alt="image1" id="footer-icon-2" class="quote-image" src="revampImages/homepage/footer-icon-2.png" />
+                    </div>
+                    <div class="quote-footer-block">
+                        <p class="quote-name">Kevin Ventura</p>
+                        <p class="quote-company">Company Name</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="quote-box-large" id="quote3">
+                <p class="quote-text">It’s never been easier to show off our Instagram feed. Our marketing team puts Shoppable Instagram grids in newsletters, checkout and just about everywhere we can!</p>
+                <div class="quote-footer">
+                    <div class="quote-footer-block">
+                        <img alt="image1" class="quote-image footer-icon-2" src="revampImages/headshot_1.png" />
+                    </div>
+                    <div class="quote-footer-block">
+                        <p class="quote-name">Ashley</p>
+                        <p class="quote-company">Head of E-Commerce at MembersOnly</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-box-large" id="quote4">
+                <p class="quote-text">Our brands spends a lot of resources making our instagram feed look great. It was a no brainer to bring this over to our website. It looks great and helps sell more of our products!</p>
+                <div class="quote-footer">
+                    <div class="quote-footer-block">
+                        <img alt="image1" class="quote-image footer-icon-2" src="revampImages/headshot_2.png" />
+                    </div>
+                    <div class="quote-footer-block">
+                        <p class="quote-name">Sarah</p>
+                        <p class="quote-company">Co-Founder at Being There Clothing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-box-empty">
+            </div>
+        </div>
+    </section>
+    <section role="region">
+        <div class="col-12-b">
+            <div class="black-bottom">
+                <div class="bottom-cta">
+                    <div>
+                        <h6 class="title-text-white">Bring Shoppable</br>Instagram Everywhere</h6>
+                    </div>
+                    <div>
+                        <p class="paragraph-text-left-white">Brands spend so much time curating and refining their Instagram, why not</br>bring it everywhere? Easily implement Sandbox Windows into your website,</br>mobile website, newsletter and Sandbox Powered Apps.</p>
+                    </div>
+                    <div id="form1">
+                        <div class="cta-surround">
+                            <input type="text" id="email4" name="email" class="email-input-white" placeholder="Enter your email address"
+                              aria-label="Enter your email address">
+                            <button class="email-submit-white" value="Sign up today" id="cta-pricingpage-footer-sign-up-button" onClick="mailchimp()">Sign up today</button>
+                        </div>
+                    </div>
+                </div>
+                <img alt="image1" id="footer-image-2" src="revampImages/homepage/footer-image-2.png" />
+                <img alt="image1" id="footer-image-1" src="revampImages/homepage/footer-image-1.png" />
+            </div>
+        </div>
+    </section>
+
+    <section role="region">
+        <div class="footer-grid-container">
+          <div class="footer-grid service-list">
+            <div>
+              <img alt="icon-mobile" class="footer-service-img icon-mobile" src="revampImages/icon-mobile.png" />
+              <img alt="experts" class="footer-service-img experts" src="revampImages/footer-service/expertsplatforms.png"/>
+            </div>
+            <div class="services">
+              <img alt="shopify" class="footer-service-img shopify" onclick="handleLink('https://apps.shopify.com/sandbox')" src="revampImages/footer-service/image_1.png"/>
+              <img alt="3dcart" class="footer-service-img 3dcart" onclick="handleLink('https://apps.3dcart.com/sandbox-commerce-mobile-apps.html')" src="revampImages/footer-service/image_3.png"/>
+              <img alt="bigcommerce" class="footer-service-img bigcommerce" onclick="handleLink('https://www.bigcommerce.com/apps/sandbox-commerce')" src="revampImages/footer-service/image_4.png"/>
+            </div>
+          </div>
+
+          <div class="footer-grid social-media">
+            <img class="footer-social-icon" alt="facebook" onclick="handleLink('https://www.facebook.com/sandboxcommerce')" src="revampImages/linkedin.svg">
+            <img class="footer-social-icon" alt="twitter" onclick="handleLink('https://twitter.com/sandboxcommerce')" src="revampImages/twitter.svg">
+            <img class="footer-social-icon" alt="instagram" onclick="handleLink('https://www.facebook.com/sandboxcommerce')" src="revampImages/instagram.svg">
+            <img class="footer-social-icon" alt="linkedin" onclick="handleLink('https://www.linkedin.com/organization-guest/company/sandboxcommerce')" src="revampImages/facebook.svg">
+            <img class="footer-social-icon" alt="email" onclick="handleLink('mailto:sales@sandboxcommerce.com')" src="revampImages/mail.svg">
+          </div>
+
+          <ul class="footer-grid service-policy">
+            <li><a href="https://www.sandboxcommerce.com/extension/terms.html">Terms of Service</a></li>
+            <li><a href="https://www.sandboxcommerce.com/extension/privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+    </section>
+</main>
+
+<script src="index.js"></script>
+<script src="social.js"></script>
+<script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRGNC76"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

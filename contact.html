@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Sandbox Commerce instantly turns your Shopify, BigCommerce and 3DCart in an iPhone and Android app. Easily design, import your inventory and launch your app.">
+    <!-- Anti-flicker snippet (recommended)  -->
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+    })(window,document.documentElement,'async-hide','dataLayer',4000,
+      {'GTM-K3F7JLQ':true});
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MRGNC76');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97380656-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-97380656-5');
+    </script>
+    <script>
+      /**
+       * Function that registers a click on an outbound link in Analytics.
+       * This function takes a valid URL string as an argument, and uses that URL string
+       * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+       * using 'navigator.sendBeacon' in browser that support it.
+       */
+      var getOutboundLink = function(url) {
+        gtag('event', 'click', {
+          'event_category': 'outbound',
+          'event_label': url,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = url;}
+        });
+      }
+
+      var userClickedCTA = function(which) {
+        gtag('event', 'ctaClick', {
+          'event_category': 'Homepage CTA Click',
+          'event_label': which
+          // 'transport_type': 'beacon',
+          // 'event_callback': function(){document.location = url;}
+        });
+      }
+    </script>
+
+    <script>
+      var revealAnswer = function(which) {
+        var plus1 = document.getElementById("plus-1");
+        var minus1 = document.getElementById("minus-1");
+        var answer1 = document.getElementById("answer-1");
+
+        var plus2 = document.getElementById("plus-2");
+        var minus2 = document.getElementById("minus-2");
+        var answer2 = document.getElementById("answer-2");
+
+        var plus3 = document.getElementById("plus-3");
+        var minus3 = document.getElementById("minus-3");
+        var answer3 = document.getElementById("answer-3");
+
+        var plus4 = document.getElementById("plus-4");
+        var minus4 = document.getElementById("minus-4");
+        var answer4 = document.getElementById("answer-4");
+
+        plus1.innerHTML = '+';
+        answer1.className = 'question-answer-text hidden-text';
+
+//          plus2.className = 'question-indicator';
+//          minus2.className = 'question-indicator hidden-text';
+        plus2.innerHTML = '+';
+        answer2.className = 'question-answer-text hidden-text';
+
+//          plus3.className = 'question-indicator';
+//          minus3.className = 'question-indicator hidden-text';
+        plus3.innerHTML = '+';
+        answer3.className = 'question-answer-text hidden-text';
+
+//          plus4.className = 'question-indicator';
+//          minus4.className = 'question-indicator hidden-text';
+        plus4.innerHTML = '+';
+        answer4.className = 'question-answer-text hidden-text';
+
+        if (which === 1) {
+//            plus1.className = 'question-indicator hidden-text';
+//            minus1.className = 'question-indicator';
+          plus1.innerHTML = '-';
+          answer1.className = 'question-answer-text';
+        } else if (which === 2) {
+//            plus2.className = 'question-indicator hidden-text';
+//            minus2.className = 'question-indicator';
+          plus2.innerHTML = '-';
+          answer2.className = 'question-answer-text';
+        } else if (which === 3) {
+//            plus3.className = 'question-indicator hidden-text';
+//            minus3.className = 'question-indicator';
+          plus3.innerHTML = '-';
+          answer3.className = 'question-answer-text';
+        } else if (which === 4) {
+//            plus4.className = 'question-indicator hidden-text';
+//            minus4.className = 'question-indicator';
+          plus4.innerHTML = '-';
+          answer4.className = 'question-answer-text';
+        }
+      }
+
+      var hamburgerOpen = false;
+      var myFunction = function() {
+        var links = document.getElementById("myLinks");
+        var hamburgerBlue = document.getElementById("hamburger-contain");
+        var hamburgerIcon = document.getElementById("hamburger");
+        var xButton = document.getElementById("x-button");
+        if (hamburgerOpen) {
+          hamburgerOpen = false;
+          links.style.display = "none";
+          hamburgerIcon.style.display = "block";
+          xButton.style.display = "none";
+          hamburgerBlue.className = 'min-blue';
+        } else {
+          hamburgerOpen = true;
+          links.style.display = "block";
+          hamburgerIcon.style.display = "none";
+          xButton.style.display = "block";
+          hamburgerBlue.className = 'max-blue';
+        }
+
+      }
+      var handleLink = function(link) {
+        window.open(link);
+      }
+    </script>
+    <!-- Hotjar Tracking Code for www.sandboxcommerce.com -->
+    <script>
+      (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1766922,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <title>Sandbox Commerce | Social</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link href="float-grid-revamp.css" rel="stylesheet" type="text/css" />
+    <link href="revamp.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Start of HubSpot Embed Code -->
+    <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4896323.js"></script> -->
+    <!-- End of HubSpot Embed Code -->
+    <!-- START OF INTERCOM -->
+    <script>
+      //Set your APP_ID
+      var APP_ID = 't7yys8wo';
+
+      window.intercomSettings = {
+        app_id: APP_ID
+      };
+      (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+    </script>
+    <!-- END OF INTERCOM -->
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '336869710068546');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=336869710068546&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <script>
+      var openIntercom = function() {
+        window.Intercom('show');
+      }
+    </script>
+</head>
+
+<body class="contact-surround">
+
+
+<div id="nav-bar-trans" >
+    <a aria-label="Go to Home Page" href="https://www.sandboxsocial.app" onclick="getOutboundLink('https://www.sandboxsocial.app'); return false;">
+        <header class="logo" role="banner">
+            <img alt="Company logo" id="logo-icon" src="revampImages/logo-trans.png" />
+        </header>
+    </a>
+    <div id="center-nav">
+        <div class="nav-desktop">
+            <div class="nav-ul">
+                <a aria-label="explore" href="explore.html"><li class="nav-li" id="explore"><h2 class="nav-trans-text">Explore</h2></li></a>
+                <a aria-label="pricing" href="pricing.html"><li class="nav-li" id="pricing"><h2 class="nav-trans-text">Pricing</h2></li></a>
+                <a aria-label="blog" href="blog.html"><li class="nav-li" id="blog"><h2 class="nav-trans-text">Blog</h2></li></a>
+                <a aria-label="contact" href="contact.html"><li class="nav-li" id="contact"><h2 class="active-nav">Contact</h2></li></a>
+            </div>
+        </div>
+    </div>
+    <div id="right-nav">
+        <div class="nav-moveable" >
+            <a aria-label="log in" href="https://app.sandboxcommerce.com/login?s=true" onclick="getOutboundLink('https://app.sandboxcommerce.com/login?s=true'); return false;">
+                <div class="login">
+                    <div class="login-text-container">
+                        <h2 id="login" class="nav-trans-text">Log in</h2>
+                    </div>
+                </div>
+            </a>
+            <a onclick="openIntercom()"><button class="nav-demo-btn-trans" id="cta-contactpage-navbar-demo-button">Book a Demo</button></a>
+        </div>
+
+    </div>
+    <a href="javascript:void(0);" class="hamburger-nav" id="hidden-nav" onclick="myFunction()">
+        <img alt="Hamburger" id="hamburger-contain" class="min-blue" src="revampImages/corner-ham-large.png" />
+        <img alt="Hamburger" id="hamburger" src="revampImages/hamburger.png" />
+        <img alt="Hamburger" id="x-button" src="revampImages/x-button.png" />
+        <div id="myLinks">
+            <img alt="mobile-icon-white" id="mobile-icon-white" src="revampImages/icon-mobile-white.png" />
+            <a aria-label="explore" href="explore.html"><h2>Explore</h2></a>
+            <a aria-label="pricing" href="pricing.html"><h2>Pricing</h2></a>
+            <a aria-label="blog" href="blog.html"><h2>Blog</h2></a>
+            <a aria-label="contact" href="contact.html"><h2>Contact</h2></a>
+            <a aria-label="login" href="https://app.sandboxcommerce.com/login?s=true"><h2>Log in</h2></a>
+            <button aria-label="demo" id="cta-contactpage-mobile-menu-demo-button" onclick="handleLink('https://app.sandboxcommerce.com/login?s=true&register=true')"><h2>Try a FREE 7 Day Trial</h2></button>
+        </div>
+    </a>
+</div>
+
+<div role="main" class="main2">
+    <section role="region">
+        <div>
+            <div class="contact-bottom">
+                <div class="contact-image-wrapper">
+                    <img alt="image1" id="contact-image-1" src="revampImages/social-shot%201.png" />
+                </div>
+                <div class="bottom-cta-contact">
+                    <div>
+                        <h6 class="title-text-white-contact">Contact us</h6>
+                    </div>
+                    <div>
+                        <p class="paragraph-text-left-white">We’re happy to help you.</p>
+                    </div>
+                    <div class="contact-supergroup">
+                        <div class="contact-group">
+                            <img alt="question" class="contact-icon" src="revampImages/contact/question.png">
+                            <div class="contact-subgroup">
+                                <a class="contact-a" onclick="openIntercom()">Talk To Us</a>
+                                <p class="contact-small-text">HELP CENTER</p>
+                            </div>
+
+                        </div>
+                        <div class="contact-group">
+                            <img alt="phone" class="contact-icon" src="revampImages/contact/phone.png">
+                            <div class="contact-subgroup">
+                                <a class="contact-a">+1 512 273 7650</a>
+                                <p class="contact-small-text">DROP US A CALL</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="contact-supergroup">
+                        <h6 class="title-text-white-small">Or follow us to stay updated</h6>
+                        <div class="contact-group2">
+                            <img alt="facebook" class="contact-icon-small" onclick="handleLink('https://www.facebook.com/sandboxcommerce')" src="revampImages/contact/logo-facebook.png">
+                            <img alt="twitter" class="contact-icon-small" onclick="handleLink('https://twitter.com/sandboxcommerce')" src="revampImages/contact/logo-twitter.png">
+                            <img alt="instagram" class="contact-icon-small" onclick="handleLink('https://www.facebook.com/sandboxcommerce')" src="revampImages/contact/logo-instagram.png">
+                            <img alt="linkedin" class="contact-icon-small" onclick="handleLink('https://www.linkedin.com/organization-guest/company/sandboxcommerce')" src="revampImages/contact/logo-linkedin.png">
+                            <img alt="email" class="contact-icon-small" onclick="handleLink('mailto:sales@sandboxcommerce.com')" src="revampImages/contact/mail.png">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="index.js"></script>
+<script src="social.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRGNC76"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

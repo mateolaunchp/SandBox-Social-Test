@@ -1,0 +1,27 @@
+{
+  "short_name": "SandBox Social",
+  "name": "SandBox Social App",
+  "description": "Integrate shoppable Instagram anywhere!",
+  "icons": [
+    {
+      "src": "favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "revampImages/icon-mobile.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "revampImages/icon-mobile.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#493EC9",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#493EC9"
+}
